@@ -1,0 +1,92 @@
+* Haskell Cheatsheet
+
+** 🧱 Basics
+| Syntax                    | Description                               |
+|---------------------------+-------------------------------------------|
+| x = 5                     | Define a constant named `x`               |
+| -- comment                | Single-line comment                       |
+| let x = 5 in x + 1        | Define local variable in expression       |
+| where                    | Local definitions in a function body      |
+
+** 🧮 Functions
+| Syntax                    | Description                               |
+|---------------------------+-------------------------------------------|
+| f x = x + 1               | Define a function                         |
+| add a b = a + b           | Function with two arguments               |
+| \x -> x + 1               | Lambda (anonymous function)               |
+| f :: Int -> Int           | Type annotation                           |
+| f x = g (h x)             | Function composition using nesting        |
+| f = g . h                 | Function composition using (.)            |
+
+** 📊 Types
+| Syntax       | Description                              |
+|--------------+------------------------------------------|
+| Int          | Fixed-size integer                       |
+| Integer      | Arbitrary-precision integer              |
+| Float        | Floating-point number                    |
+| Double       | Double-precision float                   |
+| Bool         | Boolean (`True`, `False`)                |
+| Char         | Character literal (e.g., 'a')            |
+| String       | List of characters                       |
+| [a]          | List of elements of type `a`             |
+| (a, b)       | Tuple with two elements                  |
+
+** 📚 Pattern Matching
+| Syntax                    | Description                               |
+|---------------------------+-------------------------------------------|
+| f [] = 0                  | Match an empty list                       |
+| f (x:xs) = x              | Match head and tail of a list             |
+| f (a, b) = a + b          | Destructure tuple                         |
+
+** 🧩 Tuples & Lists
+| Syntax              | Description                            |
+|---------------------+----------------------------------------|
+| (x, y)              | Tuple                                  |
+| fst (x, y)          | First element of tuple                 |
+| snd (x, y)          | Second element of tuple                |
+| [1, 2, 3]           | List                                   |
+| [1..5]              | Range from 1 to 5                      |
+| head xs             | First element                          |
+| tail xs             | All elements except first              |
+| length xs           | Length of list                         |
+| x:xs                | Prepend `x` to list `xs`               |
+| xs ++ ys            | Concatenate two lists                  |
+
+** 🔁 Control & Recursion
+| Syntax                          | Description                     |
+|---------------------------------+---------------------------------|
+| if cond then a else b           | Conditional expression          |
+| case x of ...                   | Pattern match expression        |
+| factorial 0 = 1                 | Base case for recursion         |
+| factorial n = n * factorial(n-1) | Recursive definition            |
+
+** 🧠 Guards
+| Syntax                          | Description                     |
+|---------------------------------+---------------------------------|
+| f x | x > 0 = ...               | Conditional logic in functions  |
+| | otherwise = ...              | Default (else) case             |
+
+** 🧪 Maybe Type
+| Syntax                    | Description                               |
+|---------------------------+-------------------------------------------|
+| Maybe a                  | Optional value                            |
+| Just 5                   | A value is present                        |
+| Nothing                  | No value present                          |
+| case x of Just n -> ...  | Pattern match on Maybe                    |
+
+** 🎛 Higher-Order Functions
+| Syntax                    | Description                               |
+|---------------------------+-------------------------------------------|
+| map f xs                 | Apply function to each element            |
+| filter p xs              | Keep elements that satisfy predicate      |
+| foldl (+) 0 xs           | Left fold (reduce from left)              |
+| zipWith (+) [1,2] [3,4]  | Element-wise operation on two lists       |
+
+** 🔍 GHCi Commands
+| Command        | Description                       |
+|----------------+-----------------------------------|
+| ghci           | Start interactive Haskell shell   |
+| :l file.hs     | Load a file into GHCi             |
+| :r             | Reload the file                   |
+| :t expr        | Show the type of an expression    |
+| :i name        | Show info about a function/type   |
