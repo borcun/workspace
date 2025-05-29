@@ -4,18 +4,12 @@
 (define nucleotides "ATGC")
 
 (define (count-nucleotide dna nucleotide)
-  (if (zero? (string-length dna))
-      0
-      (let ((rest ((substring dna 1))))
-        (if (char=? (string-ref dna 0) nucleotide)
-          (+ 1 (count-nucleotide rest nucleotide))
-          (count-nucleotide rest nucleotide)))))
+  (printf "Nucleotide: ~a (~a)\n" nucleotide (length (string-split dna nucleotide))))
 
-
-(define (count sample-dna nucleotides)
+(define (examine-dna dna nucleotides)
   (unless (zero? (string-length nucleotides))
-    (let ((nuc (string-ref nucleotides 0)))
-      (printf "Nucleotide: ~a (~a)\n" nuc (count-nucleotide sample-dna nuc))
-      (count sample-dna (substring nucleotides 1)))))
+    (let ((nuc (string (string-ref nucleotides 0))))
+      (count-nucleotide dna nuc)
+      (examine-dna dna (substring nucleotides 1)))))
 
-(count sample-dna nucleotides)
+(examine-dna sample-dna nucleotides)
