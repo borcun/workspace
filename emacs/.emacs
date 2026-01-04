@@ -42,3 +42,25 @@
 
 (put 'narrow-to-region 'disabled nil)
 (add-hook 'before-save-hook 'time-stamp)
+
+(defun cmake-build ()
+  "Run cmake --build in the current project."
+  (interactive)
+  (let ((default-directory (locate-dominating-file default-directory "CMakeLists.txt")))
+    (compile "cmake -GNinja -B build")))
+
+(defun cmake-compile ()
+  "Run cmake --build in the current project."
+  (interactive)
+  (let ((default-directory (locate-dominating-file default-directory "CMakeLists.txt")))
+    (compile "cmake --build build")))
+
+(defun cmake-clean-compile ()
+  "Run cmake --build in the current project."
+  (interactive)
+  (let ((default-directory (locate-dominating-file default-directory "CMakeLists.txt")))
+    (compile "cmake --build build --clean-first")))
+
+(global-set-key (kbd "C-c g") #'cmake-build)
+(global-set-key (kbd "C-c c") #'cmake-compile)
+(global-set-key (kbd "C-c x") #'cmake-clean-compile)
