@@ -1,3 +1,0 @@
-/home/boo/Workspace/opengl/glut/build/CMakeFiles/glut-windowing.dir
-/home/boo/Workspace/opengl/glut/build/CMakeFiles/edit_cache.dir
-/home/boo/Workspace/opengl/glut/build/CMakeFiles/rebuild_cache.dir

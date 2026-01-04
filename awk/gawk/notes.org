@@ -1,0 +1,20 @@
+* AWK
+The input is read in units called records, and processed by the rules one record at a time. By default, each record
+is one line. Each record is split automatically into fields, to make it more convenient for a rule to work on its
+parts. The following abbreviations such as RS, FS are built-in variable, so no need to put $ before them when using.
+
+- *RS (Record Separator):* Line separator that is used to parse whole file,
+  default line separator is newline character (\n)
+- *ORS (Output Record Separator):* Output record separator that is used to separator output records according to a separator
+- *FS (Field Separator):* Field separator that is used to parse a record, it may be a string that includes several separators
+- *OFS (Output File Separator):* Output file separator that is used by print function when printing $1, $2, etc. fields
+- *NF (Number of Field):* Number of field that indicates count of fields of current record
+- *NR (Number of Record):* Number of record that indicates current record number i.e. 1 for first line, 2 for second line
+  if there are more input file than one, NR increases when passing next file
+- *FNR (File Number of Record):* It is special to input file that is processed at that instant, it starts from 1 for next file
+- *OFMT (Ouput Format):* Output format that is used by print to format its inputs (i.e. %d format prints number as integer)
+  
+*Note 1:* The actual input is untouched: awk never modifies the input file.
+
+#+ATTR_HTML: :width 300px
+[[./example.png]]
