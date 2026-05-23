@@ -1,12 +1,7 @@
 #!/opt/homebrew/bin/lua
 
-function ascending(x, y)
-   return x > y
-end
-
-function descending(x, y)
-   return x < y
-end
+function ascending(x, y) return x > y end
+function descending(x, y) return x < y end
 
 function sort(arr, cmp)
    for i = 2, #arr do
@@ -19,7 +14,6 @@ function sort(arr, cmp)
       end
 
       arr[j + 1] = key
-      
    end
 end
 
