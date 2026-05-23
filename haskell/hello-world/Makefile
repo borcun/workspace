@@ -1,5 +1,5 @@
 all:
-	ghc hello.hs -o hello-world
+	ghc -Wall hello.hs -o hello
 
 clean:
-	rm -rf hello-world hello.hi hello.o *~
+	rm -rf hello hello.hi hello.o *~
